@@ -1,0 +1,3 @@
+[submodule "phpmvc-solutions"]
+	path = .solutions
+	url = git@bitbucket.org:mosbth/phpmvc-solutions.git
