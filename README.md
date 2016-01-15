@@ -2,6 +2,7 @@ PHP framworks (phpmvc)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/phpmvc](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/phpmvc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/mosbth/phpmvc.svg?branch=master)](https://travis-ci.org/mosbth/phpmvc)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
@@ -38,5 +39,5 @@ v0.0.0x (2015-10-01)
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015-2016 Mikael Roos, me@mikaelroos.se   
 ```                                                            
