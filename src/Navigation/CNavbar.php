@@ -42,7 +42,6 @@ class CNavbar
             $hasItemIsSelected = false;
 
             foreach ($items as $item) {
-
                 // has submenu, call recursivly and keep track on if the submenu has a selected item in it.
                 $submenu        = null;
                 $selectedParent = null;

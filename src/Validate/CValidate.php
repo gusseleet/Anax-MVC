@@ -91,7 +91,6 @@ class CValidate
             $test  =  $tests[$rule];
 
             if (is_callable($test['test'])) {
-
                 if (isset($param) && is_array($param)) {
                     $param = array_merge([$value], $param);
                 } elseif (isset($param)) {

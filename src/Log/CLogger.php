@@ -53,7 +53,6 @@ class CLogger
     {
 
         switch ($context) {
-            
             case 'production':
                 break;
             

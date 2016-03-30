@@ -7,6 +7,8 @@ namespace Anax\DI;
  * framework, using lazy loading.
  *
  */
+
+
 class CDI implements IDI
 {
 
@@ -135,7 +137,7 @@ class CDI implements IDI
         natcasesort($services);
         $services = implode("\n", $services);
         $message .= " Loaded services are: <pre>$services</pre>";
-        
+
         throw new \Exception($message);
     }
 
@@ -204,7 +206,6 @@ class CDI implements IDI
 
         // Load by calling a function
         if (is_callable($sol)) {
-
             try {
                 $this->active[$service] = $sol();
             } catch (\Exception $e) {

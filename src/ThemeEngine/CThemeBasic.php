@@ -30,6 +30,7 @@ class CThemeBasic implements IThemeEngine, \Anax\DI\IInjectionAware
      */
     public function setTitle($value)
     {
+        /* @var CThemeBasic $value */
         return $this->setVariable('title', $value);
     }
 
