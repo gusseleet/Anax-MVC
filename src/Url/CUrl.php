@@ -217,4 +217,5 @@ class CUrl
         $this->urlType = $type;
         return $this;
     }
+
 }

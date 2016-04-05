@@ -31,6 +31,19 @@ return [
             'url'   => $this->di->get('url')->create('sourcecode'),
             'title' => 'Källkod'
         ],
+
+        'comments' => [
+            'text'  => "Kommentarer 1",
+            'url'   => $this->di->get('url')->create('comments'),
+            'title' => "Kommentarer 1",
+
+        ],
+
+        'commentsTwo' => [
+            'text'  => "Kommentarer 2",
+            'url'   => $this->di->get('url')->create('commentsTwo'),
+            'title' => "Kommentarer 2",
+        ],
     ],
 
 
