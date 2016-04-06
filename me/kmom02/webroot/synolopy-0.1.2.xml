@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><Project><name>synolopy</name>
+<shortdesc>Synology Python API</shortdesc>
+<description>Synolopy
+========
+
+Synology is a Python library aimed to help using Synology device’s APIs.
+
+Features
+--------
+
+Common Gateway Interface builder
+''''''''''''''''''''''''''''''''
+
+Since Synology APIs are build using the same pattern, this library also
+uses and provides tools to instanciate a pythonic consumer for any
+CGI-based API.
+
+Installation
+------------
+
+Easy way
+''''''''
+
+.. code:: sh
+
+    pip install synolopy
+
+“Hard” way
+''''''''''
+
+.. code:: sh
+
+    git clone git@github.com:thavel/synolopy.git synolopy
+    cd ./synolopy
+    pip install .
+
+Disk Station Manager API
+------------------------
+
+Disk Station Manager is the name of the system on any Synology NAS
+devices.
+
+Quick start
+'''''''''''
+
+To start using the NAS API, you need to import the library:
+
+.. code:: python
+
+    from synolopy import NasApi
+
+    nas = NasApi('http://192.168.0.99:5000/webapi/', 'admin', 'my_super_strong_password')
+
+Basically, any API request follows this pattern: &gt;
+nas.\ *application*.\ *service*.request(\ *method*, *[params]*)
+
+For further information about methods and parameters, you need to read
+the official documentation of the related application (cf. docs linked
+above).</description>
+<homepage rdf:resource="https://github.com/thavel/synolopy" />
+<maintainer><foaf:Person><foaf:name>Thibaut Havel</foaf:name>
+</foaf:Person></maintainer>
+<release><Version><revision>0.1.2</revision></Version></release>
+</Project></rdf:RDF>

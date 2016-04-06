@@ -16,18 +16,18 @@ var app = {};
 /**
  * Prepare all code blocks for syntax highlightning.
  */
-app.initCodeBlocks = function() {
+app.initCodeBlocks = function () {
     var elements = document.querySelectorAll('[data-role="code"]');
 
     for (var i = 0; i < elements.length; ++i) {
-      var item = elements[i],
+        var item = elements[i],
           language = item.dataset.language;
 
-      hljs.configure({
-          languages: [language]
-      });
+        hljs.configure({
+            languages: [language]
+        });
 
-      hljs.highlightBlock(item);
+        hljs.highlightBlock(item);
     }
 };
 
@@ -36,7 +36,7 @@ app.initCodeBlocks = function() {
 /**
  * Prepare all code blocks for syntax highlightning.
  */
-app.loadCodeBlocksIntoSlide = function() {
+app.loadCodeBlocksIntoSlide = function () {
     var elements = document.querySelectorAll('[data-code]');
 
     for (var i = 0; i < elements.length; ++i) {
@@ -52,7 +52,7 @@ app.loadCodeBlocksIntoSlide = function() {
 /**
  * Prepare all Markdown blocks.
  */
-app.initMarkdown = function() {
+app.initMarkdown = function () {
     var elements = document.querySelectorAll('[data-markdown]'),
         converter = new showdown.Converter({tables: true});
 
@@ -68,7 +68,7 @@ app.initMarkdown = function() {
 /**
  * Enter fullscreen.
  */
-app.enterFullscreen = function(element) {
+app.enterFullscreen = function (element) {
     element = document.body;
 
     if (element.webkitRequestFullScreen &&  !document.webkitFullscreenElement) {
@@ -85,7 +85,7 @@ app.enterFullscreen = function(element) {
 /**
  * Exit fullscreen.
  */
-app.exitFullscreen = function() {
+app.exitFullscreen = function () {
     if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
     } else if (document.mozCancelFullScreen) {
@@ -100,7 +100,7 @@ app.exitFullscreen = function() {
 /**
  * Display next or previous slide.
  */
-app.play = function(controller, reverse) {
+app.play = function (controller, reverse) {
     m.startComputation();
     controller.rotateSlide(reverse);
     m.endComputation();
@@ -111,7 +111,7 @@ app.play = function(controller, reverse) {
 /**
  * Display next or previous slide.
  */
-app.useTheme = function(theme) {
+app.useTheme = function (theme) {
     var element = document.getElementsByTagName("html").item(0);
 
     console.log(element);
@@ -127,7 +127,7 @@ app.useTheme = function(theme) {
  */
 var cp = {};
 
-cp.navigate = function(controller, event) {
+cp.navigate = function (controller, event) {
 
     console.log(event.keyCode);
 
@@ -161,7 +161,7 @@ cp.navigate = function(controller, event) {
 
         default:
             return;
-        }
+    }
 
     return false;
 };
@@ -171,14 +171,13 @@ cp.navigate = function(controller, event) {
 /**
  * Config
  */
-app.config = function(controller) {
-    return function(element, isInitialized) {
+app.config = function (controller) {
+    return function (element, isInitialized) {
 
         app.loadCodeBlocksIntoSlide();
 
         if (!isInitialized) {
-
-            var navigate = function(event) {
+            var navigate = function (event) {
                     cp.navigate(controller, event);
             };
 
@@ -195,7 +194,7 @@ app.config = function(controller) {
 /**
  * Model
  */
-app.slideList = function() {
+app.slideList = function () {
     return document.querySelectorAll('[data-role="slide"]');
 };
 
@@ -204,17 +203,17 @@ app.slideList = function() {
 /**
  * Controller
  */
-app.controller = function() {
+app.controller = function () {
     var slides = app.slideList();
     var current = 0;
 
     return {
 
-        currentSlide: function() {
+        currentSlide: function () {
             return slides.item(current);
         },
 
-        rotateSlide: function(reverse) {
+        rotateSlide: function (reverse) {
             if (reverse) {
                 current = (current === 0) ? slides.length - 1 : current - 1;
             } else {
@@ -229,7 +228,7 @@ app.controller = function() {
 /**
  * View
  */
-app.view = function(controller) {
+app.view = function (controller) {
     var slide = controller.currentSlide();
     return m(
         "div#slide",
@@ -237,7 +236,7 @@ app.view = function(controller) {
             config: app.config(controller)
         },
         [
-            m("div#objects", m.trust(slide.innerHTML))
+        m("div#objects", m.trust(slide.innerHTML))
         ]
     );
 };
