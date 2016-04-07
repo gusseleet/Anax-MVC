@@ -33,7 +33,6 @@ class CResponseBasic
 
 
 
-    //Mail till MOS - akronym, validerar inte korrekt.
     /**
      * Check if headers are already sent and throw exception if it is.
      *

@@ -97,10 +97,26 @@ class CSession
         return isset($_SESSION[$key]);
     }
 
+    /**
+     * @param string $firstKey in session variable
+     * @param null $secondKey  in session variable
+     * @param null $thirdKey   in session variable
+     *
+     * @return void
+     */
 
-    public function _unset($formID, $id) {
+
+    public function _unset($firstKey, $secondKey = null, $thirdKey = null) {
 
 
-        unset($_SESSION['comments'][$formID][$id]);
+        if (!is_null($firstKey) && is_null($secondKey) && is_null($thirdKey))
+        unset($_SESSION[$firstKey]);
+
+        else if(!is_null($firstKey) && !is_null($secondKey) && is_null($thirdKey))
+        unset($_SESSION[$firstKey][$secondKey]);
+
+        else if (!is_null($firstKey) && !is_null($secondKey) && !is_null($thirdKey))
+        unset($_SESSION[$firstKey][$secondKey][$thirdKey]);
+
     }
 }
