@@ -96,4 +96,11 @@ class CSession
     {
         return isset($_SESSION[$key]);
     }
+
+
+    public function _unset($formID, $id) {
+
+
+        unset($_SESSION['comments'][$formID][$id]);
+    }
 }

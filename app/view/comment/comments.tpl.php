@@ -4,7 +4,7 @@
         <?php foreach ($comments as $id => $comment) : ?>
             <div class ='singleComment'>
 
-                <h4>Comment <a href = "<?=$this->url->create('edit')?>?id=<?=$id?>">#<?=$id?></a>, by <?=$comment['name']?> </h4>
+                <h4><a href="<?=$this->url->create('comment/removeSingle/'.$id.'/'.$this->request->getRoute())?>"><img src="../../../../me/kmom02/webroot/img/icon_delete.gif"></a> Comment <a href = "<?=$this->url->create('comment/edit/'.$id.'/'.$this->request->getRoute())?>">#<?=$id?></a>, by <?=$comment['name']?> </h4>
                 <h3> </h3>
                 <?php
                     $ts = intval($comment['timestamp']);
