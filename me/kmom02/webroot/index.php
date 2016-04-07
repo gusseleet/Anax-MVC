@@ -5,6 +5,8 @@ $app->theme->configure(ANAX_APP_PATH . 'config/myTheme.php');
 //$app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
 $app->navbar->configure(ANAX_APP_PATH . 'config/myNavbar.php');
 
+
+
 $di->set('CommentController', function() use ($di) {
     $controller = new gel\Comment\CommentController();
     $controller->setDI($di);

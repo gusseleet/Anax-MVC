@@ -128,7 +128,6 @@ class CPsr4Autoloader
         // class name to find a mapped file name
         $relative_class = null;
         while (false !== $pos = strrpos($prefix, '\\')) {
-
             // retain the trailing namespace separator in the prefix
             $prefix = substr($class, 0, $pos + 1);
 

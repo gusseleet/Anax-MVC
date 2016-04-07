@@ -33,6 +33,7 @@ class CResponseBasic
 
 
 
+    //Mail till MOS - akronym, validerar inte korrekt.
     /**
      * Check if headers are already sent and throw exception if it is.
      *
@@ -97,7 +98,9 @@ class CResponseBasic
     public function redirect($url)
     {
         $this->checkIfHeadersAlreadySent();
+
         $url = $this->di->get("url")->create($url);
+
         header('Location: ' . $url);
         exit();
     }

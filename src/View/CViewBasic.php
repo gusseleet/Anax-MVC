@@ -51,7 +51,6 @@ class CViewBasic implements \Anax\DI\IInjectionAware
     public function render()
     {
         switch ($this->type) {
-
             case 'file':
                 if (!is_readable($this->template)) {
                     throw new \Exception("Could not find template file: " . $this->template);
