@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 PHP framworks (phpmvc)
 ===================
 
@@ -26,9 +25,7 @@ This is a co-effort of several people using freely available documentation and t
 For contributors, see the commit history and the issues.
 
 Feel free to help builing up the repository with more content suited for training and education.
-=======
-Anax-MVC
-=========
+
 
 [![Latest Stable Version](https://poser.pugx.org/leaphly/cart-bundle/version.png)](https://packagist.org/packages/anax/mvc)
 [![Build Status](https://travis-ci.org/mosbth/Anax-MVC.png?branch=master)](https://travis-ci.org/mosbth/Anax-MVC)
@@ -73,12 +70,7 @@ The following external modules are included and subject to its own license.
 * License: PHP Markdown Lib Copyright © 2004-2013 Michel Fortin http://michelf.ca/
 * Path: included in `3pp/php-markdown`
 
->>>>>>> upstream/master
-
-
-
 History
-<<<<<<< HEAD
 -------------------
 
 v0.0.0x (2015-10-01)
@@ -91,7 +83,6 @@ v0.0.0x (2015-10-01)
  .                                                             
 ..:  Copyright (c) 2015-2016 Mikael Roos, me@mikaelroos.se   
 ```                                                            
-=======
 -----------------------------------
 
 
@@ -209,4 +200,3 @@ v1.0.0 (2013-06-28)
  .  
 ..:  Copyright (c) 2013 - 2014 Mikael Roos, me@mikaelroos.se
 ```
->>>>>>> upstream/master

@@ -8,10 +8,13 @@
                      http://pmd.sf.net/ruleset_xml_schema.xsd">
     <description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         Custom rule set for htmlphp course.
     </description>
 
 =======
+=======
+>>>>>>> upstream/master
         Rule set for Anax-MVC.
     </description>
 
@@ -26,13 +29,19 @@
     <exclude-pattern>test/config.php</exclude-pattern>
     <exclude-pattern>webroot/test</exclude-pattern>
 
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 >>>>>>> upstream/master
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
 
     <rule ref="PSR2">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+=======
+>>>>>>> upstream/master
 =======
 >>>>>>> upstream/master
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
