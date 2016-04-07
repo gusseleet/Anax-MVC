@@ -10,22 +10,29 @@ class CommentsInSession implements \Anax\DI\IInjectionAware
 {
     use \Anax\DI\TInjectable;
 
+    const ORG_PATH = 'comments';
 
 
     /**
      * Add a new comment.
      *
      * @param array $comment with all details.
-     * 
+     * @param string $which with what comment-section should be used
      * @return void
      */
-    public function add($comment)
+    public function add($comment, $fieldID)
     {
-        $comments = $this->session->get('comments', []);
-        $comments[] = $comment;
-        $this->session->set('comments', $comments);
-    }
 
+
+        $allComments = $this->session->get(CommentsInSession::ORG_PATH, []);
+        if(array_key_exists($fieldID, $allComments))
+             $pageComments = $allComments[$fieldID];
+
+        $pageComments[] = $comment;
+        $allComments[$fieldID] = $pageComments;
+
+        $this->session->set(CommentsInSession::ORG_PATH, $allComments);
+    }
 
 
     /**
@@ -33,9 +40,20 @@ class CommentsInSession implements \Anax\DI\IInjectionAware
      *
      * @return array with all comments.
      */
-    public function findAll()
+    public function findAll($fieldID)
     {
-        return $this->session->get('comments', []);
+
+
+        $allComments = $this->session->get(CommentsInSession::ORG_PATH, []);
+
+        if(array_key_exists($fieldID, $allComments))
+            $pageComments = $allComments[$fieldID];
+        else
+            $pageComments = null;
+
+
+
+        return $pageComments;
     }
 
 
@@ -47,15 +65,39 @@ class CommentsInSession implements \Anax\DI\IInjectionAware
      */
     public function deleteAll()
     {
-        $this->session->set('comments', []);
+        $this->session->set(CommentsInSession::ORG_PATH, []);
+
     }
 
 
 
-    public function find($id) {
+    public function delete($id, $fieldID){
 
-    $current = $this->session->get('comments');
-    return $current[$id];
+
+        $this->session->_unset($fieldID, $id);
+
+    }
+
+
+
+    public function find($id, $fieldID) {
+
+        $allComments = $this->session->get(CommentsInSession::ORG_PATH, []);
+        $pageComments = $allComments[$fieldID];
+        return $pageComments[$id];
+
+    }
+
+    public function update($id, $comment, $fieldID = null) {
+
+
+        $allComments = $this->session->get(CommentsInSession::ORG_PATH, []);
+        $pageComments = $allComments[$fieldID];
+
+        $pageComments[$id] = $comment;
+        $allComments[$fieldID] = $pageComments;
+
+        $this->session->set(CommentsInSession::ORG_PATH, $allComments);
 
     }
 

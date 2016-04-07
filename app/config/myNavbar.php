@@ -26,22 +26,22 @@ return [
         ],
 
         // This is a menu item
-        'sourcecode' => [
-            'text'  =>'Källkod',
-            'url'   => $this->di->get('url')->create('sourcecode'),
-            'title' => 'Källkod'
-        ],
+     //   'sourcecode' => [
+     //       'text'  =>'Källkod',
+     //       'url'   => $this->di->get('url')->create('sourcecode'),
+     //       'title' => 'Källkod'
+     //   ],
 
         'comments' => [
             'text'  => "Kommentarer 1",
-            'url'   => $this->di->get('url')->create('comments'),
+            'url'   => $this->di->get('url')->create('comments-page-1'),
             'title' => "Kommentarer 1",
 
         ],
 
         'commentsTwo' => [
             'text'  => "Kommentarer 2",
-            'url'   => $this->di->get('url')->create('commentsTwo'),
+            'url'   => $this->di->get('url')->create('comments-page-2'),
             'title' => "Kommentarer 2",
         ],
     ],
