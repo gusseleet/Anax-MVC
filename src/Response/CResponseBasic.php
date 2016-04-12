@@ -97,13 +97,9 @@ class CResponseBasic
     public function redirect($url)
     {
         $this->checkIfHeadersAlreadySent();
-<<<<<<< HEAD
 
         $url = $this->di->get("url")->create($url);
 
-=======
-        $url = $this->di->get("url")->create($url);
->>>>>>> 31c25be9dd34963f69e5d234c9612af224724526
         header('Location: ' . $url);
         exit();
     }
